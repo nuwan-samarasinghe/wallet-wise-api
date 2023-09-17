@@ -4,14 +4,78 @@ databaseChangeLog:
       author: Nuwan Samarasinghe
       changes:
         - createTable:
+            tableName: auth
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+              - column:
+                  name: username
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_timestamp
+                  type: TIMESTAMP
+              - column:
+                  name: updated_timestamp
+                  type: TIMESTAMP
+        - createTable:
             tableName: users
             columns:
               - column:
                   name: id
-                  type: INT
+                  type: uuid
+              - column:
+                  name: first_name
+                  type: VARCHAR(255)
                   constraints:
-                    primaryKey: true
                     nullable: false
               - column:
-                  name: name
+                  name: last_name
                   type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_timestamp
+                  type: TIMESTAMP
+              - column:
+                  name: updated_timestamp
+                  type: TIMESTAMP
+              - column:
+                  name: auth_id
+                  type: uuid
+        - addPrimaryKey:
+            columnNames: id
+            constraintName: pk_auth
+            tableName: auth
+            validate: true
+        - addPrimaryKey:
+            columnNames: id
+            constraintName: pk_users
+            tableName: users
+            validate: true
+        - addForeignKeyConstraint:
+            baseColumnNames: auth_id
+            baseTableName: users
+            constraintName: fk_auth_users
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: auth
+            validate: true
+  - changeSet:
+      id: update-table-users
+      author: Nuwan Samarasinghe
+      changes:
+        - addColumn:
+            tableName: auth
+            columns:
+              - column:
+                  name: email
+                  type: varchar(255)
