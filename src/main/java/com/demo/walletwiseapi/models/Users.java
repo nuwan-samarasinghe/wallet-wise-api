@@ -1,4 +1,4 @@
-package com.demo.springbootdemoapi.models;
+package com.demo.walletwiseapi.models;
 
 import jakarta.persistence.*;
 import lombok.Data;

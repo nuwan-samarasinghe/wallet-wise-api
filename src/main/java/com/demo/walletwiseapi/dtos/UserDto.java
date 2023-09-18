@@ -1,4 +1,4 @@
-package com.demo.springbootdemoapi.dtos;
+package com.demo.walletwiseapi.dtos;
 
 import lombok.Builder;
 import lombok.Data;

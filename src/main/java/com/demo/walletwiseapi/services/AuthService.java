@@ -1,6 +1,6 @@
-package com.demo.springbootdemoapi.services;
+package com.demo.walletwiseapi.services;
 
-import com.demo.springbootdemoapi.models.Auth;
+import com.demo.walletwiseapi.models.Auth;
 
 import java.util.List;
 

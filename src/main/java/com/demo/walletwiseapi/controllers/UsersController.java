@@ -1,6 +1,6 @@
-package com.demo.springbootdemoapi.controllers;
+package com.demo.walletwiseapi.controllers;
 
-import com.demo.springbootdemoapi.dtos.UserDto;
+import com.demo.walletwiseapi.dtos.UserDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
