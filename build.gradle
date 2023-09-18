@@ -35,6 +35,8 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     /*liquibase dependencies*/
     implementation group: 'org.liquibase', name: 'liquibase-core', version: '4.23.2'
+    /*open api dependencies*/
+    implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.2.0'
     /*spring boot test dependencies*/
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
