@@ -2,6 +2,8 @@ package com.demo.walletwiseapi.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.sql.Timestamp;
@@ -23,9 +25,11 @@ public class Users {
     private String lastName;
 
     @Column(name = "created_timestamp")
+    @CreationTimestamp
     private Timestamp createdTimestamp;
 
     @Column(name = "updated_timestamp")
+    @UpdateTimestamp
     private Timestamp updatedTimestamp;
 
     @OneToOne(cascade = CascadeType.ALL)

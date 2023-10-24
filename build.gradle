@@ -27,6 +27,7 @@ dependencies {
     /*spring boot dependencies*/
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     /*mysql dependency from spring boot*/
     implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.1.0'
@@ -38,6 +39,7 @@ dependencies {
     /*open api dependencies*/
     implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.2.0'
     /*spring boot test dependencies*/
+    implementation 'org.springframework.security:spring-security-test'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

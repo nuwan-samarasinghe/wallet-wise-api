@@ -2,18 +2,29 @@ package com.demo.walletwiseapi.controllers.impl;
 
 import com.demo.walletwiseapi.controllers.UsersController;
 import com.demo.walletwiseapi.dtos.UserDto;
+import com.demo.walletwiseapi.models.Auth;
+import com.demo.walletwiseapi.models.Users;
+import com.demo.walletwiseapi.services.UsersService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UsersControllerImpl implements UsersController {
-    @Override
-    public ResponseEntity<UserDto> createUser() {
-        return null;
+
+    private final UsersService usersService;
+
+    public UsersControllerImpl(UsersService usersService) {
+        this.usersService = usersService;
     }
 
     @Override
-    public ResponseEntity<UserDto> updateUser() {
+    public ResponseEntity<UserDto> createUser(UserDto userDto) {
+        return ResponseEntity.ok(usersService.createUser(userDto));
+    }
+
+    @Override
+    public ResponseEntity<UserDto> updateUser(UserDto userDto) {
         return null;
     }
 

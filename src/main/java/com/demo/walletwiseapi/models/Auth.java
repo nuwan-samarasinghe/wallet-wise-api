@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.sql.Timestamp;
@@ -28,8 +30,10 @@ public class Auth {
     private String email;
 
     @Column(name = "created_timestamp")
+    @CreationTimestamp
     private Timestamp createdTimestamp;
 
     @Column(name = "updated_timestamp")
+    @UpdateTimestamp
     private Timestamp updatedTimestamp;
 }

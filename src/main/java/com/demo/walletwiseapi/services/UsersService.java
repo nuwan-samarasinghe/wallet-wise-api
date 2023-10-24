@@ -7,6 +7,6 @@ public interface UsersService {
 
     Users getUserByUserName(String username);
 
-    Users createUser(UserDto userDto);
+    UserDto createUser(UserDto userDto);
 
 }
